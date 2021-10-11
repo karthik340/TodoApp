@@ -12,8 +12,9 @@ function ToDoList()
     const [editToDo, setEditToDo] =useState(null)
     const buttonTitle = editMode ? 'Edit':'Add';
 
-    const endpoint = "https://to-do-karthik340.herokuapp.com/todos"
+    const endpoint = "https://to-do-karthik340.herokuapp.com/todos/"
     const savedTodos = useAPI(endpoint)
+    
     useEffect(()=>{
         dispatch({type:"get",payload:savedTodos})},[savedTodos])
     const handleSubmit = async event=>{
